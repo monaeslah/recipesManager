@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
-import RecipeList from "./components/recipeList";
+
 import RecipeForm from "./pages/RecipeForm";
 import Header from "./components/header";
 import MainMenu from "./components/mainMenu";
-import Recipe from "./components/myRecipe";
+import Recipe from "./components/myrecipe/Index";
 
 const router = createBrowserRouter([
   {

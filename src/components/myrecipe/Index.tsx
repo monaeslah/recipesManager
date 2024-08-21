@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 import SearchBar from "./searchBar";
-import FilterTags from "./filterTaag";
+import FilterTags from "./FilterTags";
 import RecipeList from "./recipeList";
 
 const Recipe: React.FC = () => {
