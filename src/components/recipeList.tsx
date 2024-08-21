@@ -1,28 +1,17 @@
 // src/components/RecipeList.tsx
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../store";
-import { removeRecipe } from "../features/recipes/recipesSlice";
+import RecipeCard from "./recipeCard";
 
-const RecipeList: React.FC = () => {
-  const recipes = useSelector((state: RootState) => state.recipes.recipes);
-  const dispatch = useDispatch();
+interface RecipeListProps {
+  recipes: any[]; // Replace 'any' with your Recipe type
+}
 
-  const handleDelete = (id: string) => {
-    dispatch(removeRecipe(id));
-  };
-
+const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
   return (
-    <div>
-      <h2>Recipes</h2>
-      <ul>
-        {recipes.map((recipe) => (
-          <li key={recipe.id}>
-            <h3>{recipe.title}</h3>
-            <button onClick={() => handleDelete(recipe.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+    <div className="recipe-list">
+      {recipes.map((recipe) => (
+        <RecipeCard key={recipe.id} recipe={recipe} />
+      ))}
     </div>
   );
 };

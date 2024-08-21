@@ -5,11 +5,16 @@ export interface Ingredient {
 
 export interface Recipe {
   id: string;
-  title: string;
-  ingredients: Ingredient[];
-  steps: string[];
-  imageUrl?: string;
-  category: string;
+  name: string;
+  description: string;
+  recipeNotes: string;
+  tags: string[];
+  videoLink: string;
+  source: string;
+  nutritionInfo: string;
+  pairingNotes: string;
+  ingredients: string[];
+  instructions: string[];
 }
 export interface RecipesState {
   recipes: Recipe[];

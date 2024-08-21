@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addRecipe } from "../features/recipes/recipesSlice";
 import TagSelector from "../components/TagSelector";
 import IngredientInput from "../components/IngredientInput";
 import InstructionsInput from "../components/InstructionsInput";
-
+import { v4 as uuidv4 } from "uuid";
 const RecipeForm: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // State management for form inputs
+  const [name, setName] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [recipeNotes, setRecipeNotes] = useState<string>("");
+  const [tags, setTags] = useState<string[]>([]);
+  const [videoLink, setVideoLink] = useState<string>("");
+  const [source, setSource] = useState<string>("");
+  const [nutritionInfo, setNutritionInfo] = useState<string>("");
+  const [pairingNotes, setPairingNotes] = useState<string>("");
+  const [ingredients, setIngredients] = useState<string[]>([]);
+  const [instructions, setInstructions] = useState<string[]>([]);
   const save = () => {
+    const newRecipe = {
+      id: uuidv4(),
+      name,
+      description,
+      recipeNotes,
+      tags,
+      videoLink,
+      source,
+      nutritionInfo,
+      pairingNotes,
+      ingredients,
+      instructions,
+    };
+    dispatch(addRecipe(newRecipe));
     navigate("/");
   };
   return (

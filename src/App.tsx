@@ -6,6 +6,7 @@ import RecipeList from "./components/recipeList";
 import RecipeForm from "./pages/RecipeForm";
 import Header from "./components/header";
 import MainMenu from "./components/mainMenu";
+import Recipe from "./components/myRecipe";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/new-recipe",
     element: <RecipeForm />,
+  },
+  {
+    path: "/my-recipe",
+    element: <Recipe />,
   },
 ]);
 const App = () => {
