@@ -1,21 +1,33 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "./App.css";
 import RecipeList from "./components/recipeList";
-import RecipeForm from "./components/RecipeForm";
+import RecipeForm from "./pages/RecipeForm";
 import Header from "./components/header";
 import MainMenu from "./components/mainMenu";
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainMenu />,
+  },
+  {
+    path: "/new-recipe",
+    element: <RecipeForm />,
+  },
+]);
+const App = () => {
+  const [theRouter, setTheRouter] = useState(router);
   return (
     <div className="App">
-      <h1>Recipe Manager</h1>
+      <Header />
+
+      <RouterProvider router={theRouter} />
+      <ToastContainer />
       {/* <RecipeList />
       <RecipeForm /> */}
-      <Header />
-      <MainMenu />
     </div>
   );
-}
-
+};
 export default App;
