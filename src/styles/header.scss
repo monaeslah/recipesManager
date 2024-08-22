@@ -1,0 +1,11 @@
+// src/components/Header.scss
+.header {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  &__logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2d3e50;
+  }
+}

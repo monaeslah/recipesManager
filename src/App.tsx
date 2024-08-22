@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "./App.css";
 
-function App() {
+import RecipeForm from "./pages/RecipeForm";
+import Header from "./components/header";
+import MainMenu from "./components/mainMenu";
+import Recipe from "./components/myrecipe/Index";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainMenu />,
+  },
+  {
+    path: "/new-recipe",
+    element: <RecipeForm />,
+  },
+  {
+    path: "/my-recipe",
+    element: <Recipe />,
+  },
+]);
+const App = () => {
+  const [theRouter, setTheRouter] = useState(router);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+      <RouterProvider router={theRouter} />
+      <ToastContainer />
+      {/* <RecipeList />
+      <RecipeForm /> */}
     </div>
   );
-}
-
+};
 export default App;
