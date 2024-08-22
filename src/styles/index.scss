@@ -1,8 +1,13 @@
+@import './abstracts/variables';
+@import './base/typography';
 @import './app.scss';
 @import './header.scss';
 @import './menuItem.scss';
 @import './mainMenu.scss';
 @import './recipeModal.scss';
+@import './cards.scss';
+@import './components/search.scss';
+@import './components/filterTag.scss';
 @import './recipe-form.scss';
 @import './tag-selector.scss';
 @import './ingredient-input.scss';

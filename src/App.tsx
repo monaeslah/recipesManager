@@ -7,6 +7,7 @@ import RecipeForm from "./pages/RecipeForm";
 import Header from "./components/header";
 import MainMenu from "./components/mainMenu";
 import Recipe from "./components/myrecipe/Index";
+import Tags from "./pages/Tags";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/my-recipe",
     element: <Recipe />,
+  },
+  {
+    path: "/tags",
+    element: <Tags />,
   },
 ]);
 const App = () => {

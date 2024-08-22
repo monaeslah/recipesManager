@@ -1,23 +1,22 @@
 // src/components/FilterTags.tsx
-import React from "react";
-
+import React, { useState } from "react";
+import tagsData from "../../utils/tags.json";
 interface FilterTagsProps {
-  tags: string[];
   selectedTags: string[];
   toggleTag: (tag: string) => void;
 }
 
-const FilterTags: React.FC<FilterTagsProps> = ({
-  tags,
-  selectedTags,
-  toggleTag,
-}) => {
+const { tags } = tagsData;
+const FilterTags: React.FC<FilterTagsProps> = ({ selectedTags, toggleTag }) => {
+  const [taglist, setTaglist] = useState<string[]>(tags);
   return (
-    <div className="filter-tags">
-      {tags.map((tag) => (
+    <div className="filter-tags ">
+      {taglist.map((tag) => (
         <button
           key={tag}
-          className={`tag ${selectedTags.includes(tag) ? "selected" : ""}`}
+          className={`tag body-small ${
+            selectedTags.includes(tag) ? "selected" : ""
+          }`}
           onClick={() => toggleTag(tag)}
         >
           {tag}

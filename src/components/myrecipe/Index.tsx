@@ -4,37 +4,13 @@ import React, { useState } from "react";
 import SearchBar from "./searchBar";
 import FilterTags from "./FilterTags";
 import RecipeList from "./recipeList";
-
+import recipesData from "../../utils/recipes.json";
+const { recipeslist } = recipesData;
 const Recipe: React.FC = () => {
+  const [recipes, setRecipes] = useState(recipeslist);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  // Sample data
-  const recipes = [
-    {
-      id: 1,
-      name: "Berry Acai Bowl",
-      description: "Healthy and refreshing acai bowl with fresh berries.",
-      tags: ["Breakfast", "Healthy", "Lunch", "Smoothies", "Vegetarian"],
-      imageUrl: "path_to_image",
-    },
-    {
-      id: 2,
-      name: "Homemade Lemonade",
-      description: "Fresh and zesty lemonade, perfect for summer.",
-      tags: ["Drinks"],
-      imageUrl: "path_to_image",
-    },
-    {
-      id: 3,
-      name: "Pumpkin Soup",
-      description: "Creamy and comforting pumpkin soup, perfect for autumn.",
-      tags: ["Appetizers", "Dinner", "Lunch", "Soup", "Vegetarian"],
-      imageUrl: "path_to_image",
-    },
-  ];
-
-  // Filter and search logic
   const filteredRecipes = recipes.filter(
     (recipe) =>
       recipe.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
@@ -51,26 +27,12 @@ const Recipe: React.FC = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container body-small">
       <header>
-        <h1>CookBook</h1>
+        <span className="heading-small">CookNote</span>
       </header>
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <FilterTags
-        tags={[
-          "Appetizers",
-          "Breakfast",
-          "Dinner",
-          "Drinks",
-          "Healthy",
-          "Lunch",
-          "Smoothies",
-          "Soup",
-          "Vegetarian",
-        ]}
-        selectedTags={selectedTags}
-        toggleTag={toggleTag}
-      />
+      <FilterTags selectedTags={selectedTags} toggleTag={toggleTag} />
       <RecipeList recipes={filteredRecipes} />
     </div>
   );

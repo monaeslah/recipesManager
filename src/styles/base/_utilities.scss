@@ -1,0 +1,145 @@
+.mt-10 {
+   margin-top: 10px;
+}
+
+.mb-10 {
+   margin-bottom: 10px;
+}
+
+.text-center {
+   text-align: center;
+}
+
+.main {
+   border: 0;
+   max-width: 1440px;
+   background-color: $primary-white;
+   margin: 0 auto;
+
+   .mainContent {
+      display: grid;
+      grid-template-columns: 250px auto;
+      max-height: 100vh;
+   }
+}
+
+.mainPage {
+   margin-top: 50px;
+   padding: 20px 20px 20px 20px;
+   overflow: auto;
+   background-color: #ffffff;
+   height: calc(100vh - 60px);
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+
+}
+
+.mainPage::-webkit-scrollbar {
+   display: none;
+}
+
+.content {
+   flex: 1;
+}
+
+.hidden {
+   display: none;
+}
+
+.visible {
+   display: block;
+}
+
+.link {
+   cursor: pointer;
+}
+
+.clickable {
+   cursor: pointer;
+}
+
+.react-datepicker__input-container input {
+   border: none;
+   background: transparent;
+   cursor: pointer;
+   width: 100%;
+}
+
+.shipper-timeline {
+   .react-datepicker__input-container {
+      input {
+         cursor: default;
+      }
+   }
+}
+
+.react-datepicker__input-container input:focus {
+   outline: none;
+}
+
+.react-datepicker-popper {
+   z-index: 199;
+}
+
+div.menu {
+   .szh-menu-button {
+      border: none;
+      border-radius: 80px;
+      width: 30px;
+      height: 30px;
+      background-color: #F5F5F5;
+      p {
+         border: 1px solid black;
+         border-radius: 80px;
+         width: 30px;
+         height: 30px;
+         line-height: 25px;
+      }
+      img {
+         width: 30px;
+         height: 30px;
+         cursor: pointer;
+      }
+   }
+}
+
+div.tour {
+   .szh-menu-button {
+      border: none;
+      border-radius: 80px;
+      width: 20px;
+      height: 20px;
+      background-color: #F5F5F5;
+
+      img {
+         width: 20px;
+         height: 20px;
+         cursor: pointer;
+      }
+   }
+}
+
+#overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   z-index: 2000;
+   background-color: white;
+   opacity: 90%;
+
+   .spinner {
+      margin-top: 20%;
+   }
+}
+
+a {
+   text-decoration: none;
+}
+
+.rs-pre-tree-menu {
+   z-index: 9000;
+}
+
+//need to add flex column class also mb&mt auto plus m 0 auto

@@ -11,7 +11,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   setSearchQuery,
 }) => {
   return (
-    <div className="search-bar">
+    <div className="search-bar body-small bold">
       <input
         type="text"
         placeholder="Search by keywords..."
