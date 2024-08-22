@@ -10,11 +10,13 @@ const { tags } = tagsData;
 const FilterTags: React.FC<FilterTagsProps> = ({ selectedTags, toggleTag }) => {
   const [taglist, setTaglist] = useState<string[]>(tags);
   return (
-    <div className="filter-tags">
+    <div className="filter-tags ">
       {taglist.map((tag) => (
         <button
           key={tag}
-          className={`tag ${selectedTags.includes(tag) ? "selected" : ""}`}
+          className={`tag body-small ${
+            selectedTags.includes(tag) ? "selected" : ""
+          }`}
           onClick={() => toggleTag(tag)}
         >
           {tag}

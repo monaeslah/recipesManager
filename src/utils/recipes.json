@@ -4,6 +4,8 @@
       "id": 1,
       "name": "Berry Acai Bowl",
       "description": "Healthy and refreshing acai bowl with fresh berries.",
+      "prep": "15 mins",
+      "cook": "40 mins",
       "tags": [
         "Breakfast",
         "Healthy",
@@ -11,21 +13,25 @@
         "Smoothies",
         "Vegetarian"
       ],
-      "imageUrl": "path_to_image"
+      "imageUrl": "../../assets/images/berry.jpeg"
     },
     {
       "id": 2,
       "name": "Homemade Lemonade",
       "description": "Fresh and zesty lemonade, perfect for summer.",
+      "prep": "15 mins",
+      "cook": "40 mins",
       "tags": [
         "Drinks"
       ],
-      "imageUrl": "path_to_image"
+      "imageUrl": "../../assets/images/berry.jpeg"
     },
     {
       "id": 3,
       "name": "Pumpkin Soup",
       "description": "Creamy and comforting pumpkin soup, perfect for autumn.",
+      "prep": "15 mins",
+      "cook": "40 mins",
       "tags": [
         "Appetizers",
         "Dinner",
@@ -33,7 +39,7 @@
         "Soup",
         "Vegetarian"
       ],
-      "imageUrl": "path_to_image"
+      "imageUrl": "../../assets/images/berry.jpeg"
     }
   ]
 }
