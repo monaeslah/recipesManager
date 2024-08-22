@@ -7,9 +7,9 @@ import RecipeList from "./recipeList";
 import recipesData from "../../utils/recipes.json";
 const { recipeslist } = recipesData;
 const Recipe: React.FC = () => {
+  const [recipes, setRecipes] = useState(recipeslist);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [recipes, setRecipes] = useState(recipeslist);
 
   const filteredRecipes = recipes.filter(
     (recipe) =>
@@ -27,9 +27,9 @@ const Recipe: React.FC = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container body-small">
       <header>
-        <h1>CookNote</h1>
+        <span className="heading-small">CookNote</span>
       </header>
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <FilterTags selectedTags={selectedTags} toggleTag={toggleTag} />

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuItem from "./MenuItem";
-import heart from "../styles/images/heart-svgrepo-com.svg";
-import add from "../styles/images/add-svgrepo-com.svg";
-import book from "../styles/images/book-album-svgrepo-com.svg";
-import calendar from "../styles/images/calendar-lines-alt-svgrepo-com.svg";
-import list from "../styles/images/list-check-svgrepo-com.svg";
-import recent from "../styles/images/time-svgrepo-com.svg";
-import search from "../styles/images/search-svgrepo-com .svg";
-import tags from "../styles/images/tags-svgrepo-com.svg";
+import heart from "../assets/images/heart-svgrepo-com.svg";
+import add from "../assets/images/add-svgrepo-com.svg";
+import book from "../assets/images/book-album-svgrepo-com.svg";
+import calendar from "../assets/images/calendar-lines-alt-svgrepo-com.svg";
+import list from "../assets/images/list-check-svgrepo-com.svg";
+import recent from "../assets/images/time-svgrepo-com.svg";
+import search from "../assets/images/search-svgrepo-com .svg";
+import tags from "../assets/images/tags-svgrepo-com.svg";
 import AddRecipeModal from "./addRecipeModal";
 const MainMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const MainMenu: React.FC = () => {
 
   const handleSearchClick = () => {
     console.log("Navigating to Search page");
-    navigate(`/new-recipe`);
+    navigate(`/my-recipe`);
   };
 
   const handleMealPlannerClick = () => {
@@ -49,7 +49,7 @@ const MainMenu: React.FC = () => {
 
   const handleTagsClick = () => {
     console.log("Navigating to Tags page");
-    navigate(`/new-recipe`);
+    navigate("/tags");
   };
 
   const handleShoppingListsClick = () => {
@@ -73,6 +73,11 @@ const MainMenu: React.FC = () => {
         onPage={handleMealPlannerClick}
       />
       <MenuItem title="Tags" icon={tags} onPage={handleTagsClick} />
+      <MenuItem
+        title="Recent Recipes"
+        icon={recent}
+        onPage={handleRecentRecipesClick}
+      />
       <MenuItem
         title="Shopping Lists"
         icon={list}
