@@ -1,32 +1,19 @@
-// src/components/MenuItem.tsx
-import React, { useState } from "react";
-import AddRecipeModal from "./addRecipeModal";
+import React from "react";
 
 interface MenuItemProps {
   title: string;
   icon: string;
+  onPage: () => void;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ title, icon }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-  const closeModalf = () => {
-    setIsModalOpen(false);
-  };
-
+const MenuItem: React.FC<MenuItemProps> = ({ title, icon, onPage }) => {
   return (
-    <>
-      <div className="menu-item" onClick={openModal}>
-        <div className="menu-item__icon">
-          <img src={icon} alt="" />
-        </div>
-        <div className="menu-item__title">{title}</div>
+    <div className="menu-item" onClick={onPage}>
+      <div className="menu-item__icon">
+        <img src={icon} alt={title} />
       </div>
-      <AddRecipeModal open={isModalOpen} onClose={closeModalf} />
-    </>
+      <div className="menu-item__title">{title}</div>
+    </div>
   );
 };
 
