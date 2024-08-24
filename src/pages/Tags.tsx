@@ -5,12 +5,12 @@ interface FilterTagsProps {}
 
 const { tags } = tagsData;
 const FilterTags: React.FC<FilterTagsProps> = () => {
-  const [taglist, setTaglist] = useState<string[]>(tags);
+  const [taglist, setTaglist] = useState(tags);
   return (
     <div className="filter-tags">
       {taglist.map((tag) => (
-        <div key={tag} className={`tag`} onClick={() => {}}>
-          {tag}
+        <div key={tag.id} className={`tag`} onClick={() => {}}>
+          {tag.name}
         </div>
       ))}
     </div>

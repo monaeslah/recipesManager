@@ -8,13 +8,13 @@ export interface Recipe {
   name: string;
   description: string;
   recipeNotes: string;
-  tags: string[];
+  selectedTags: string[];
   videoLink: string;
   source: string;
   nutritionInfo: string;
   pairingNotes: string;
-  ingredients: string[];
-  instructions: string[];
+  ingredients: string | undefined;
+  instructions: string | undefined;
 }
 export interface RecipesState {
   recipes: Recipe[];

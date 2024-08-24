@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import tagsData from "../utils/tags.json";
+interface FilterTagsProps {}
 
+const { tags } = tagsData;
 const TagSelector: React.FC = () => {
+  const [taglist, setTaglist] = useState(tags);
   return (
     <div className="tags">
       <label>Tags</label>
       <div className="tag-list">
-        <span className="tag">Appetizers</span>
-        <span className="tag">Asian</span>
-        {/* Add more tags here */}
+        <div className="filter-tags">
+          {taglist.map((tag) => (
+            <div key={tag.id} className={`tag`} onClick={() => {}}>
+              {tag.name}
+            </div>
+          ))}
+        </div>
       </div>
       <button className="manage-tags-btn">Add / Manage tags</button>
     </div>

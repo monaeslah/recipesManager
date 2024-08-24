@@ -1,22 +1,31 @@
-// src/App.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import SearchBar from "./searchBar";
 import FilterTags from "./FilterTags";
 import RecipeList from "./recipeList";
-import recipesData from "../../utils/recipes.json";
-const { recipeslist } = recipesData;
-const Recipe: React.FC = () => {
-  const [recipes, setRecipes] = useState(recipeslist);
+import { Recipe, RecipesState } from "../../types/interface";
+
+const AllRecipe: React.FC = () => {
+  const reduxRecipes = useSelector((state: any) => state.recipes.recipes);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  const filteredRecipes = recipes.filter(
-    (recipe) =>
-      recipe.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-      (selectedTags.length === 0 ||
-        recipe.tags.some((tag: string) => selectedTags.includes(tag)))
-  );
+  useEffect(() => {
+    if (reduxRecipes) {
+      setRecipes(reduxRecipes);
+    }
+  }, [reduxRecipes]);
+
+  const filteredRecipes = recipes
+    .map((recipe) => recipe)
+    .filter(
+      (recipe) =>
+        recipe.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+        (selectedTags.length === 0 ||
+          recipe.selectedTags.some((tag: string) => selectedTags.includes(tag)))
+    );
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prevTags) =>
@@ -38,4 +47,4 @@ const Recipe: React.FC = () => {
   );
 };
 
-export default Recipe;
+export default AllRecipe;

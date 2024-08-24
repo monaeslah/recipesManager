@@ -1,6 +1,6 @@
 // src/components/RecipeCard.tsx
 import React from "react";
-import berry from "../../assets/images/berry.jpeg";
+
 interface RecipeCardProps {
   recipe: any;
 }
@@ -17,7 +17,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
           {recipe.cook}
         </div>
         <div className="tags">
-          {recipe.tags.map((tag: string) => (
+          {recipe.selectedTags.map((tag: string) => (
             <span key={tag} className="tag">
               {tag}
             </span>

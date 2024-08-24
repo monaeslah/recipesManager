@@ -37,7 +37,12 @@
         font-size: 16px;
       }
     }
-
+    .tag-list {
+      display: flex;
+      .filter-tags {
+        width: 100%;
+      }
+    }
     .recipe-footer {
       display: flex;
       flex-direction: column;

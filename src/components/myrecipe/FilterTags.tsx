@@ -8,18 +8,18 @@ interface FilterTagsProps {
 
 const { tags } = tagsData;
 const FilterTags: React.FC<FilterTagsProps> = ({ selectedTags, toggleTag }) => {
-  const [taglist, setTaglist] = useState<string[]>(tags);
+  const [taglist, setTaglist] = useState(tags);
   return (
     <div className="filter-tags ">
       {taglist.map((tag) => (
         <button
-          key={tag}
+          key={tag.id}
           className={`tag body-small ${
-            selectedTags.includes(tag) ? "selected" : ""
+            selectedTags.includes(tag.name) ? "selected" : ""
           }`}
-          onClick={() => toggleTag(tag)}
+          onClick={() => toggleTag(tag.name)}
         >
-          {tag}
+          {tag.name}
         </button>
       ))}
     </div>

@@ -3,7 +3,7 @@ import React from "react";
 import RecipeCard from "./recipeCard";
 
 interface RecipeListProps {
-  recipes: any[]; // Replace 'any' with your Recipe type
+  recipes: any[];
 }
 
 const RecipeList: React.FC<RecipeListProps> = ({ recipes }) => {
