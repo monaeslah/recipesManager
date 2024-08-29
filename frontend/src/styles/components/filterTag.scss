@@ -9,11 +9,11 @@
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 8px 12px;
-  background-color: $gray-medium-light;
-  border: none;
+  background-color: $primary-light-blue;
+  border: 1px solid rgb(136 156 169);
   border-radius: 5px;
   cursor: pointer;
-  color: $blue-gray-color;
+  color: $navy;
 }
 
 .filter-tags .tag.selected {

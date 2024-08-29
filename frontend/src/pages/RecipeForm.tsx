@@ -55,7 +55,7 @@ const RecipeForm: React.FC = () => {
   return (
     <div id="recipe-form">
       <div className="recipe-form">
-        <div>
+        <div className="recipe-left">
           <section className="about">
             <h2>About</h2>
             <label>Name</label>
@@ -78,6 +78,7 @@ const RecipeForm: React.FC = () => {
             ></textarea>
 
             <div className="tag-list">
+              <label>Tags</label>
               <div className="filter-tags">
                 {taglist.map((tag) => (
                   <div
@@ -93,6 +94,10 @@ const RecipeForm: React.FC = () => {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="upload-image">
+              <label>Photos</label>
+              <div className="uploader">drag photo</div>
             </div>
           </section>
 
@@ -127,7 +132,7 @@ const RecipeForm: React.FC = () => {
             <button className="delete-recipe-btn">Delete</button>
           </section>
         </div>
-        <div>
+        <div className="recipe-right">
           <section className="ingredients">
             <h2>Ingredients</h2>
             <textarea

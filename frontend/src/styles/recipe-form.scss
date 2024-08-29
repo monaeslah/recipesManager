@@ -6,7 +6,8 @@
     display: flex;
     flex-direction: row;
     gap: 5%;
-    div {
+    .recipe-right,
+    .recipe-left {
       width: 45%;
     }
 
@@ -42,6 +43,11 @@
       .filter-tags {
         width: 100%;
       }
+    }
+    .uploader {
+      width: 150px;
+      height: 120px;
+      border: 1px solid rgb(136 156 169);
     }
     .recipe-footer {
       display: flex;
