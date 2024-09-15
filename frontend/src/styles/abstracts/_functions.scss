@@ -1,0 +1,38 @@
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+  }
+  @function calculate-rem($size) {
+    @return #{$size / 16}rem;
+  }
+  // Function to apply opacity to a hex color
+@function color-opacity($color, $opacity) {
+  @if (type-of($color) == 'color' and $opacity >= 0 and $opacity <= 1) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+    @return rgba($r, $g, $b, $opacity);
+  } @else {
+    @warn "Invalid parameters for `color-opacity` function. Color should be a color and opacity between 0 and 1.";
+    @return $color; 
+  }
+}
+
+
+// .inputField {
+//   background-color: color-opacity($blue, 0.1);  // Applying function
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

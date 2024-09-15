@@ -1,0 +1,9 @@
+// src/components/MainMenu.scss
+.main-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}

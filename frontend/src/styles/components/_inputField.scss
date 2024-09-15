@@ -1,0 +1,130 @@
+@mixin input-size($width) {
+  width: $width;
+}
+
+// Main container styling
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .inputField {
+    display: flex;
+
+    align-items: center;
+    box-shadow: $input-field-box-shadow;
+    border-radius: $border-radius;
+    transition: box-shadow $transition-speed, border-color $transition-speed;
+    border: 1px solid $color-border-default;
+
+    // Input sizes
+    &.largeInput {
+      @include input-size(620px);
+    }
+    &.mediumInput {
+      @include input-size(500px);
+    }
+    &.smallInput {
+      @include input-size(350px);
+    }
+    &.xsmallInput {
+      @include input-size(160px);
+    }
+    // Input element inside the container
+    input {
+      border: none;
+      min-height: $input-height;
+
+      width: 100%;
+      font-size: $font-size-base;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: $primary-blue;
+      }
+    }
+
+    // Input focus and content states
+    &:focus-within {
+      border-color: $color-border-focus;
+    }
+
+    &.has-content:not(.error) {
+      border-color: $color-border-focus;
+    }
+
+    &.error {
+      border-color: $errorColor;
+    }
+
+    // Password toggle icon states
+    .passwordToggleIcon {
+      cursor: pointer;
+      &.hidden {
+        display: none;
+      }
+      &.visible {
+        display: inline-block;
+      }
+    }
+  }
+
+  // Label styling for input field
+  .inputLabel {
+    font-size: $font-size-smaller-medium; // Using your defined font size
+    font-weight: $font-weight-normal;
+    color: $color-text-primary; // Use primary text color
+  }
+
+  // Helper text under the input field
+  .inputHelp {
+    display: flex;
+    align-items: center;
+    color: $color-text-secondary; // Secondary text color
+    font-weight: $font-weight-light;
+    font-size: $font-size-smaller-medium;
+
+    img {
+      margin-right: 5px;
+    }
+  }
+
+  // For question block headers
+  .questionBlockHeader {
+    font-size: $font-size-extra-small; // Small font size for headers
+    color: $color-text-light; // Light text color for headers
+  }
+
+  // Utility class to reset margin alignment
+  .reset-input-position {
+    margin: auto;
+  }
+}
+
+// Utility classes for spacing
+.input-gap {
+  gap: 32px;
+}
+
+.custom-padding {
+  padding-left: 25px;
+}
+
+// Dropdown styling
+.dropdown-custom {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  span {
+    flex: 1;
+  }
+
+  img {
+    max-width: 28px;
+    height: 20px;
+    margin-left: auto;
+  }
+}
