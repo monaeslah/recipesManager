@@ -1,0 +1,86 @@
+#recipe-form {
+  .recipe-form {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    div {
+      width: 45%;
+    }
+
+    section {
+      margin-bottom: 30px;
+      text-align-last: left;
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      input[type='text'],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+    }
+    .tag-list {
+      display: flex;
+      .filter-tags {
+        width: 100%;
+      }
+    }
+    .recipe-footer {
+      display: flex;
+      flex-direction: column;
+
+      .link-recipe-btn,
+      .delete-recipe-btn {
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        background-color: #fff;
+        color: #007bff;
+      }
+
+      .delete-recipe-btn {
+        color: red;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    .cancel-btn,
+    .save-btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      background-color: #fff;
+      color: #007bff;
+    }
+
+    .save-btn {
+      background-color: #007bff;
+      color: #fff;
+    }
+  }
+}

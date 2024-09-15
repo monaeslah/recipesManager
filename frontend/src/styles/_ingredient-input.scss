@@ -1,0 +1,32 @@
+.ingredients {
+  textarea {
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .unit-selection {
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    div {
+      display: flex;
+      gap: 10px;
+
+      button {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .selected {
+        background-color: #007bff;
+        color: #fff;
+      }
+    }
+  }
+}
